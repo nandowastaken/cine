@@ -4,7 +4,7 @@
 .LandingPage {
     width: 100%;
     height: 100%;
-    background-image: url('../assets/darthvader.svg');
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -15,13 +15,33 @@
     
 }
 
+.backgroundImgContainer {
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets//darthvader.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 0;
+}
+
+.backgroundImage {
+    position: absolute;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: -10;
+}   
+
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     width: 98%;
     gap: 20px;
     padding: 5px;
+    z-index: 10;
 }
 
 .logo {
@@ -32,17 +52,17 @@
 }
 
 .links {
-    width: 73%;
+    width: 80%;
     display: flex;
     align-items: flex-end;
     margin-top: 20px;
-    gap: 10px;
+    gap: 16px;
 }
 
 .nav-link {
     color: white;
     font-size: 1rem;
-    font-family: "Poppins", sans-serif;
+    font-family: "Special Elite", cursive;
     font-weight: 400;
     text-decoration: none;
     transition: .2s ease;
@@ -52,25 +72,38 @@
     color: red;
 }
 
+.profile {
+    cursor: pointer;
+    width: 25%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile img {
-    width: 84%;
-    height: 100%;
+    width: 56px;
+    height: 64px;
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 .info {
     width: 80%;
     height: 80%;
+    margin-bottom: 80px;
     gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
+    z-index: 10;
 }
 
 .description {
     font-size: 2rem;
     color: white;
-    font-family: "Poppins", sans-serif;
+    font-family: "Special Elite", cursive;
     width: 40%;
     text-align: justify;
 }
@@ -89,10 +122,68 @@
     font-family: "Inter", sans-serif;
     font-weight: 900;
 
-    transition: .4s ease;
+    transition: .6s ease;
     
 }
 
 .join:hover {
+    background-color: #FFFFFF;
     color: red;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media only screen and (max-width: 428px) {
+    .LandingPage {
+        background-color: black;
+        justify-content: space-between;
+    }
+
+    .backgroundImgContainer {
+        height: 50%;
+    }
+
+    .navbar {
+        width: 95%;
+        z-index: 10;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        
+    }
+
+    .line {
+        width: 30px;
+        height: 4px;
+        background-color: #FFFFFF;
+    }
+
+    .info {
+        height: 50%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 45px;
+    }   
+
+    .description {
+        width: 100%;
+    }
+
+    .join {
+        width: 100%;
+        height: 10%;
+    }
 }

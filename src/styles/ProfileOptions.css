@@ -1,0 +1,50 @@
+.ProfileOptions {
+    display: flex;
+    flex-direction: column;
+    background-color: #282828;
+    width: 70%;
+    height: 260px;
+    border-radius: 20px;
+}
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin: 20px;
+}
+
+.name, .username {
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+} 
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.option {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: .4s ease;
+}
+
+.option:hover {
+    color: red;
+}
+

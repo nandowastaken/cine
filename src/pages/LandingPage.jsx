@@ -1,8 +1,14 @@
 import "../styles/LandingPage.css";
 
+import ProfileOptions from "../components/ProfileOptions";
+
+function clickProfile() {}
+
 export default function LandingPage() {
   return (
     <div className="LandingPage">
+      <div className="backgroundImgContainer"></div>
+
       <nav className="navbar">
         <h1 className="logo">Cineclube.</h1>
         <div className="links">
@@ -24,7 +30,14 @@ export default function LandingPage() {
         </div>
 
         <div className="profile">
-          <img src="../src/assets/profile.svg" alt="" />
+          <ProfileOptions />
+          <img src="../src/assets/profile.svg" alt="" onClick={clickProfile} />
+        </div>
+
+        <div className="hamburger">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
         </div>
       </nav>
 
