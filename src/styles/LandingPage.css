@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.LandingPage {
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/darthvader.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    gap: 20px;
+    padding: 5px;
+}
+
+.logo {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.links {
+    width: 73%;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+.profile img {
+    width: 84%;
+    height: 100%;
+}
+
+.info {
+    width: 80%;
+    height: 80%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.description {
+    font-size: 2rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    width: 40%;
+    text-align: justify;
+}
+
+.join {
+    background-color: #982C3D;
+    color: #FFFFFF;
+
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 30%;
+    height: 6%;
+
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+
+    transition: .4s ease;
+    
+}
+
+.join:hover {
+    color: red;
+}
