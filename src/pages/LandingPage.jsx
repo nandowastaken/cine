@@ -2,7 +2,14 @@ import "../styles/LandingPage.css";
 
 import ProfileOptions from "../components/ProfileOptions";
 
-function clickProfile() {}
+function activateHamburger() {
+  var links = document.getElementById("links");
+  if (links.style.display === "flex") {
+    links.style.display = "none";
+  } else {
+    links.style.display = "flex";
+  }
+}
 
 export default function LandingPage() {
   return (
@@ -11,7 +18,7 @@ export default function LandingPage() {
 
       <nav className="navbar">
         <h1 className="logo">Cineclube.</h1>
-        <div className="links">
+        <div className="links" id="links">
           <a href="" className="nav-link">
             Home
           </a>
@@ -31,10 +38,10 @@ export default function LandingPage() {
 
         <div className="profile">
           <ProfileOptions />
-          <img src="../src/assets/profile.svg" alt="" onClick={clickProfile} />
+          <img src="../src/assets/profile.svg" alt="" />
         </div>
 
-        <div className="hamburger">
+        <div className="hamburger" onClick={activateHamburger}>
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
