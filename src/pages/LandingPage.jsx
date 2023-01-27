@@ -17,23 +17,25 @@ export default function LandingPage() {
       <div className="backgroundImgContainer"></div>
 
       <nav className="navbar">
-        <h1 className="logo">Cineclube.</h1>
-        <div className="links" id="links">
-          <a href="" className="nav-link">
-            Home
-          </a>
-          <a href="" className="nav-link">
-            Sobre Nós
-          </a>
-          <a href="" className="nav-link">
-            Filme
-          </a>
-          <a href="" className="nav-link">
-            Equipe
-          </a>
-          <a href="" className="nav-link">
-            Contato
-          </a>
+        <div className="leftSide">
+          <h1 className="logo">Cineclube.</h1>
+          <div className="links" id="links">
+            <a href="" className="nav-link">
+              Home
+            </a>
+            <a href="" className="nav-link">
+              Sobre Nós
+            </a>
+            <a href="" className="nav-link">
+              Filme
+            </a>
+            <a href="" className="nav-link">
+              Equipe
+            </a>
+            <a href="" className="nav-link">
+              Contato
+            </a>
+          </div>
         </div>
 
         <div className="profile">

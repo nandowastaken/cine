@@ -17,7 +17,7 @@
 .img {
     width: 50%;
     height: 100%;
-    background-image: url('../src/assets/darth-vader.png');
+    background-image: url('../src/assets/back-to-the-future.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -67,6 +67,7 @@
 
 .loginButton {
     background-color: var(--buttonSubmit);
+    cursor: pointer;
     border: none;
     width: 260px;
     height: 34px;
