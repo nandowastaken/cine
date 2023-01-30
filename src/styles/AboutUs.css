@@ -1,0 +1,177 @@
+.AboutUs {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 55vh;
+}
+
+.whoWeAre, .howItWorks, .nextMeeting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    height: 85%;
+    width: 22%;
+    gap: 12px;
+}
+
+.howItWorks {
+    background-color: #FFFF;
+    position: relative;
+    bottom: 12%;
+    border-radius: 35px;
+    width: 32%;
+    height: 91%;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+
+.howItWorks .aboutUsSectionTitle {
+    color: black;
+}
+
+.howItWorksDescContainer .aboutUsSectionDescription {
+    font-size: 22px;
+    text-align: center;
+    color: black;
+}
+
+.howItWorksDescContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 20px;
+}
+
+.arrow {
+    width: 32px;
+    height: 32px;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    filter: invert(14%) sepia(96%) saturate(7055%) hue-rotate(4deg) brightness(115%) contrast(118%);
+}
+
+.whoWeAre .aboutUsSectionDescription {
+    text-align: left;   
+    font-size: 20px;
+}
+
+.aboutUsSectionTitle {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: white;
+}
+
+.aboutUsSectionDescription {
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+.nextMeeting {
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    gap: 30px;
+}
+
+.nextMeeting .aboutUsSectionDescription {
+    font-size: 20px;
+    text-align: right;
+    
+}
+
+.seeMovie {
+    background-color: #982C3D;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    border: none;
+    border-radius: 20px;
+    width: 90%;
+    height: 15%;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.seeMovie:hover {
+    background-color: white;
+    color: red;
+}
+
+@media only screen and (min-width: 2000px) {
+    .AboutUs {
+        height: 65vh;
+    }
+
+    .howItWorks {
+        bottom: 5%;
+        width: 708px;
+        height: 723px;
+        border-radius: 57px;
+    }
+
+    .howItWorks .aboutUsSectionDescription {
+        margin: 0px 40px;
+    }
+
+    .aboutUsSectionTitle {
+        font-size: 70px;
+    }
+
+    .howItWorks .aboutUsSectionDescription, .whoWeAre .aboutUsSectionDescription, .nextMeeting .aboutUsSectionDescription {
+        font-size: 37px;
+    }
+
+    .arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .whoWeAre, .nextMeeting {
+        height: 90%; 
+    }
+
+    .whoWeAre {
+        width: 518px;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .whoWeAre .aboutUsSectionDescription {
+        height: 495px;
+        font-weight: 300;
+    }
+
+    .nextMeeting {
+        margin-top: 40px;
+        width: 606px;
+    }
+
+    .nextMeeting .aboutUsSectionDescription {
+        width: 550px;
+        font-weight: 300;
+    }
+
+    .seeMovie {
+        font-size: 50px;
+        border-radius: 40px;
+        height: 91px;
+        width: 505px;
+        margin-top: 50px;
+    }
+
+}
