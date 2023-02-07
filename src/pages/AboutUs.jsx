@@ -32,9 +32,7 @@ export default function AboutUs() {
       <div className="nextMeeting">
         <h1 className="aboutUsSectionTitle">Próxima Reunião</h1>
         <p className="aboutUsSectionDescription">
-          Nossa próxima reunião é Sexta-feira, 25/11, sobre o filme Psicose
-          (1960), do Alfred Hitchcock, nos horários da manhã de 11h até 12h, e
-          de tarde, de 13h até 14h.
+          Nossa próxima reunião é dia 03/03/2023. O tema é stop-motion, e o filme escolhido é Pinocchio do Del Toro! Acontecerá no horário de 13:00 até às 14:40 na sala de vídeo da biblioteca.
         </p>
 
         <button className="seeMovie">Ver Filme</button>
