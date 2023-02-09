@@ -177,3 +177,71 @@
     }
 
 }
+
+@media only screen and (max-width: 1280px) {
+    .howItWorks {
+        bottom: 30px;
+    }
+
+    .whoWeAre {
+        align-items: flex-start;
+        width: 25%;
+    }
+
+    .whoWeAre .aboutUsSectionDescription{ 
+        font-size: 20px;
+    }
+
+    .nextMeeting {
+        width: 30%;
+        margin-left: 50px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .AboutUs {
+        gap: 50px;
+    }
+
+    .whoWeAre {
+        height: auto;
+        width: 35%;
+        margin-top: 20px;
+        margin-left: 80px;
+    }
+
+    .whoWeAre .aboutUsSectionTitle {
+        font-size: 32px;    
+    }
+
+    .whoWeAre .aboutUsSectionDescription {
+        font-size: 18px;
+    }
+
+    .howItWorks {
+        width: 55%;
+        height: 120%;
+        margin-left: 0;
+    }
+
+    .howItWorks .aboutUsSectionTitle {
+        text-align: center;
+        font-size: 36px;
+    }
+
+    .howItWorks .aboutUsSectionDescription {
+        font-size: 20px;
+    }
+
+    .nextMeeting {
+        width: 35%;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    .nextMeeting .aboutUsSectionTitle {
+        font-size: 28px;
+    }
+    
+}
