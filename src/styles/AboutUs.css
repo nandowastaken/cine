@@ -245,3 +245,43 @@
     }
     
 }
+
+@media only screen and (max-width: 412px) {
+    .AboutUs {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 110vh;
+        gap: 30px;
+    }
+
+    .whoWeAre, .howItWorks, .nextMeeting {
+        width: 90%;
+        margin: 0;
+    }
+
+    .whoWeAre {
+        height: 25%;
+    }
+
+    .whoWeAre {
+        align-items: center;
+    }
+
+    .whoWeAre .aboutUsSectionDescription {
+        text-align: center;
+    }
+
+    .howItWorks {
+        position: static;
+        height: 35%;
+    }
+
+    .nextMeeting {
+        height: 35%;
+    }
+
+    .nextMeeting .aboutUsSectionDescription {
+        text-align: center;
+    }
+}
