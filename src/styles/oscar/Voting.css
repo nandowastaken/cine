@@ -1,0 +1,110 @@
+.votingHeader {
+  position: relative;
+  
+  min-height: 18vh;
+  overflow: hidden;
+  padding: 1.5rem;
+}
+
+.votingHeader h1 {
+  color: #D71F47;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.categoryTitleConteiner {
+  width: 340px;
+  padding: 10px;
+  margin-left: 2.5rem;
+  border-radius: 16px;
+  border-top-left-radius: 0px;
+  box-shadow: 3px 3px 10px 0px #0000005e;
+
+  background-color: #D9B800;
+}
+
+.categoryTitleConteiner h2 {
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.categoryTitleConteiner p {
+  font-size: 1.2rem;
+}
+
+.votingHeaderBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100vw;
+  filter: brightness(0.4);
+}
+
+.votingMain {
+  height: 80vh;
+  background-color: #161616;
+  box-shadow: 0px -5px 10px 0px #0000005e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.votingOptions {
+  margin: 2rem;
+  display: flex;
+}
+
+.votingOptions button {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 12px 20px;
+  border: none;
+
+  background: linear-gradient(96.35deg, #A61333 -3.96%, #D71F47 88.07%);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.votingOptions button:first-child {
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+}
+
+.votingOptions button:last-child {
+  border-top-right-radius: 36px;
+  border-bottom-right-radius: 36px;
+  align-items: flex-end;
+}
+
+.votingOptions button span:first-child {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.categoryNumber {
+  width: 160px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryNumber span {
+  color: white;
+}
+
+.categoryNumber span:first-child {
+  font-size: 1.6rem;
+}
+
+.categoryNumber span:last-child {
+  font-size: 1.2rem;
+}
