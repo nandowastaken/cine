@@ -18,14 +18,14 @@ export default function AboutUs() {
         <h1 className="aboutUsSectionTitle">Como funciona?</h1>
 
         <div className="howItWorksDescContainer">
-          <img src="../src/assets/left-arrow.svg" alt="" className="arrow" />
+          {/* <img src="../src/assets/left-arrow.svg" alt="" className="arrow" /> */}
           <p className="aboutUsSectionDescription">
             Todo mês nós temos duas reuniões em uma Sexta-feira, uma no turno da
             manhã e a outra na da tarde, sobre um filme escolhido previamente. O
             tema e a data serão sempre exibidos neste site, então não precisam
             ficar preocupados em ficarem desinformados.
           </p>
-          <img src="../src/assets/right-arrow.svg" alt="" className="arrow" />
+          {/* <img src="../src/assets/right-arrow.svg" alt="" className="arrow" /> */}
         </div>
       </div>
 

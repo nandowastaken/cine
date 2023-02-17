@@ -13,9 +13,7 @@ function activateHamburger() {
 
 export default function LandingPage() {
   return (
-    <div className="LandingPage">
-      <div className="backgroundImgContainer"></div>
-
+    <div className="LandingPage backgroundImgContainer">
       <nav className="navbar">
         <div className="leftSide">
           <h1 className="logo">Cineclube.</h1>
