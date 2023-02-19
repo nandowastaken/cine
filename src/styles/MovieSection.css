@@ -11,10 +11,6 @@
     
 }
 
-.movieCoverDesktop {
-    display: none;
-}
-
 .infoMovie {
     display: flex;
     flex-direction: column;
@@ -49,6 +45,10 @@
     display: none;
 }
 
+.movieBoxInstructionText {
+    font-family: "Poppins", sans-serif;
+}
+
 @media only screen and (min-width: 1280px) {
     .movie {
         display: flex;
@@ -58,7 +58,7 @@
         padding-bottom: 70px;
     }
 
-    .movieCoverDesktop {
+    .movieCover {
         display: flex;
         height: 100%;
     }
@@ -95,7 +95,7 @@
         transition-delay: .3s;
     }
 
-    .imgMovieBox img{
+    .imgMovieBox img {
         height: 100%;
         width: 100%;
         object-fit: cover;
@@ -185,15 +185,73 @@
         transition-delay: 0s;
     }
 
-    .infoMovie .name{
+    .infoMovie .name {
         font-size: 3em;
     }
+    
+}
 
-    .movieCoverMobile {
+@media only screen and (max-width: 414px) {
+    .MovieSection {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .movie {
+        width: 100%;
+    }
+
+    .movieCard {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .imgMovieBox {
+        height: 50vh;
+        width: 100vw;
+        background-image: url("https://occ-0-768-114.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABTdQEk1cq4XPU1JajVf4wRyzuRIamC6Ra_RBVVZfD2-o6B40layNHPvcj1BAx7zHIP69hlgr17WncZxvF-FM3qYJUl8LaVDPzImu.jpg?r=b82");
+        background-position: right top;
+    }
+
+    .movieCover {
         display: none;
     }
 
-    
+    .infoMovie {
+        width: 90%;
+        margin: 0px;
+        padding: 0px;
+    }
 
-    
+    .movieHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    .movieTitle {
+        font-size: 28px;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .MovieSection {
+        height: 90vh;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .MovieSection {
+        height: 85vh;
+    }
+
+    .movieTitle {
+        font-size: 26px;
+    }
 }

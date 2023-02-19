@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    height: 370px;
+    height: 400px;
     margin-top: 20px;
 }
 
@@ -109,7 +109,7 @@
 
 @media only screen and (min-width: 2000px) {
     .AboutUs {
-        height: 65vh;
+        height: 80vh;
     }
 
     .howItWorks {
@@ -280,5 +280,18 @@
 
     .nextMeeting .aboutUsSectionDescription {
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .AboutUs {
+        height: 155vh;
+    }
+}
+
+
+@media only screen and (max-width: 360px) {
+    .AboutUs {
+        height: 135vh;
     }
 }
