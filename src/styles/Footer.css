@@ -1,0 +1,42 @@
+.Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    height: 25vh;
+    gap: 12px;
+    
+}
+
+.if-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.if-info-name, .if-info-campus, .copyright-text, .copyright-warning {
+    font-family: "Poppins", sans-serif;
+}
+
+.if-info-campus {
+    font-weight: 700;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 414px) {
+    .Footer {
+        height: 40vh;
+    }
+
+    .if-info-name {
+        text-align: center;
+    }
+}
