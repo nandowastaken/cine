@@ -36,29 +36,8 @@ export default createBrowserRouter([
         }
       },
       {
-        path: "/admin/add/:section",
-        element: <AddRecordAdminSection />,
-        action: async ({ params, request }) => {
-          const formData = await request.formData();
-          const body = new Object();
-
-          for (let key of formData.keys()) {
-            body[key] = formData.get(key);
-          }
-
-          let created = null;
-          try {
-            if (params.section === 'categoryOscar') {
-              created = await axios.post(
-                'https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/adicionarCategoriaOscar',
-                body
-              );
-            }
-            return created;
-          } catch (error) {
-            console.log(error);
-          }
-        }
+        path: "/admin/:section/add",
+        element: <AddRecordAdminSection />
       }
     ]
   },

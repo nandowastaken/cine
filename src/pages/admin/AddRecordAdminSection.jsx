@@ -1,31 +1,88 @@
-import React from "react";
-import { useLocation, Form } from "react-router-dom";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from 'axios';
+
+import '../../styles/admin/AddRecordAdminSection.css';
 
 function AddRecordAdminSection() {
-  const location = useLocation();
-  const splitPathname = location.pathname.split('/');
-  const api = splitPathname[splitPathname.length - 1];
+  const navigate = useNavigate();
+  const pathname = useLocation().pathname;
+
+  const [ errorMessage, setErrorMessage ] = useState();
   
   const getForm = () => {
-    if (api === 'categoryOscar') {
+    if (pathname.includes('categoriesOscar')) {
+      const [ category, setCategory ] = useState();
+      const [ previousCategory, setPreviousCategory ] = useState();
+      const [ nextCategory, setNextCategory ] = useState();
+
       return (
-        <Form method="post">
+        <form
+          method="post" 
+          className="formAddRecord"
+          onSubmit={async (ev) => {
+            ev.preventDefault();
+            setErrorMessage('');
+
+            try {
+              await axios.post(
+                'https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/adicionarCategoriaOscar',
+                {
+                  category,
+                  previousCategory,
+                  nextCategory
+                }
+              );
+              navigate('/admin/categoriesOscar');
+            } catch (error) {
+              if (error.code && error.code === 'ERR_BAD_REQUEST') 
+                setErrorMessage(JSON.parse(error.request.response).erro);
+            }
+          }}>
           <legend>Adicionar Categoria do Óscar</legend>
 
-          <input name="category" placeholder="Categoria" />
-          <input name="previousCategory" placeholder="Categoria Anterior" />
-          <input name="nextCategory" placeholder="Próxima Categoria" />
+          <fieldset>
+            <input 
+              name="category"
+              placeholder="Categoria" 
+              onChange={(ev) => {
+                setCategory(ev.target.value);
+              }} 
+            />
+          </fieldset>
 
-          <button type="submit">Enviar</button>
-        </Form>
+          <fieldset>
+            <input 
+              name="previousCategory" 
+              placeholder="Categoria Anterior" 
+              onChange={(ev) => {
+                setPreviousCategory(ev.target.value);
+              }}  
+            />
+            <input 
+              name="nextCategory" 
+              placeholder="Próxima Categoria" 
+              onChange={(ev) => {
+                setNextCategory(ev.target.value);
+              }}  
+            />
+          </fieldset>
+
+          <button 
+            type="submit">
+            Enviar
+          </button>
+
+          <span className="errorMessage">{ errorMessage }</span>
+        </form>
       );
     }
   };
 
   return (
-    <div>
+    <>
       { getForm() }
-    </div>
+    </>
   )
 }
 

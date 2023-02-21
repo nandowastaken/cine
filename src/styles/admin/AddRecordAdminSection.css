@@ -1,0 +1,41 @@
+.formAddRecord {
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formAddRecord legend {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.formAddRecord fieldset {
+  border: none;
+}
+
+.formAddRecord input {
+  box-sizing: border-box;
+
+  width: 250px;
+  height: 35px;
+  padding: 5px;
+  margin: 0px 5px 5px 0px;
+}
+
+.formAddRecord button[type="submit"] {
+  align-self: flex-start;
+
+  width: 250px;
+  height: 35px;
+  margin-top: .5rem;
+
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.errorMessage {
+  margin-top: 1rem;
+  color: red;
+  font-size: .9rem;
+}

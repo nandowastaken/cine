@@ -60,7 +60,7 @@ function AdminSection() {
           ? (
             <Link
               className="material-icons-outlined addRecord"
-              to="/admin/add/categoryOscar"
+              to="/admin/categoriesOscar/add"
             >add</Link>
           )
           : null
