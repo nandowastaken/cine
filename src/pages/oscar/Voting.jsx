@@ -5,12 +5,12 @@ import '../../styles/oscar/Voting.css';
 
 function Voting() {
   const data = useLoaderData();
-  const categories = data.all;
   
-  const [ actualCategory, setActualCategory ] = useState(data.actual);
-  const [ categoryIndex, setCategoryIndex ] = useState(categories.findIndex(el => {
-    return el === actualCategory
-  }));
+  const [ categoryIndex, setCategoryIndex ] = useState(0);
+  const currentData = data[categoryIndex];
+  
+  const currentCategory = currentData.category;
+  const nominees = currentData.nominees;
   
   return (
     <div className="votingOscar">
@@ -18,46 +18,52 @@ function Voting() {
         <h1>Cineclube.</h1>
 
         <section className="categoryTitleConteiner">
-          <h2>{ actualCategory.category }</h2>
-          <p>Vote para { actualCategory.category } de 2022</p>
+          <h2>{ currentCategory.category }</h2>
+          <p>Vote para { currentCategory.category } de 2022</p>
         </section>
 
         <img className="votingHeaderBackground" src="https://raw.githubusercontent.com/deisantix/cine/main/public/eeaao-background.png" />
       </header>
 
       <main className="votingMain">
+        <section className="votingNominated">
+          {nominees.map(el => (
+            <span key={el.id}>
+              {el.nominated}, {el.film}
+            </span>
+          ))}
+        </section>
+
         <div className="votingOptions">
           <button onClick={() => {
             const previousCategory = categoryIndex - 1;
-            if (categories[previousCategory])
+            if (data[previousCategory])
               setCategoryIndex(previousCategory);
           }}>
             <span>Anterior</span>
             <span>{ 
-              (actualCategory.previousCategory) 
-                ? actualCategory.previousCategory.toUpperCase()
+              (currentCategory.previousCategory) 
+                ? currentCategory.previousCategory.toUpperCase()
                 : ''
             }</span>
                 
           </button>
 
           <div className="categoryNumber">
-            <span>{ categoryIndex + 1 } de { categories.length }</span>
+            <span>{ categoryIndex + 1 } de { data.length }</span>
             <span>categorias</span>
           </div>
 
           <button onClick={() => {
             const nextCategoryIndex = categoryIndex + 1;
-            if (categories[nextCategoryIndex]) {
-              const nextCategory = categories[nextCategoryIndex];
-              const categoryName = nextCategory.category.replace(' ', '-');
-              navigate(`/oscar/voting/${categoryName}`);
+            if (data[nextCategoryIndex]) {
+              setCategoryIndex(nextCategoryIndex);
             }
           }}>
             <span>Próximo</span>
             <span>{ 
-              (actualCategory.nextCategory)
-                ? actualCategory.nextCategory.toUpperCase() 
+              (currentCategory.nextCategory)
+                ? currentCategory.nextCategory.toUpperCase() 
                 : ''
             }</span>
           </button>

@@ -54,6 +54,13 @@
   align-items: center;
 }
 
+.votingNominated {
+  padding: 20px;
+  color: #ffffff;
+
+  display: flex;
+}
+
 .votingOptions {
   margin: 2rem;
   display: flex;
