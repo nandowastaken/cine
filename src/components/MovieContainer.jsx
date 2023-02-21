@@ -6,22 +6,22 @@ export default function MovieContainer() {
           <div className="movieCard" id="movie">
             <div className="imgMovieBox">
               <img
-                src="https://occ-0-768-114.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABTdQEk1cq4XPU1JajVf4wRyzuRIamC6Ra_RBVVZfD2-o6B40layNHPvcj1BAx7zHIP69hlgr17WncZxvF-FM3qYJUl8LaVDPzImu.jpg?r=b82"
+                src="https://images8.alphacoders.com/129/1291625.jpg"
                 alt="movie image"
                 className="movieCover"
               />
             </div>
             <div className="infoMovie">
               <div className="movieHeader">
-                <p className="movieTitle">A Origem dos Guardiões</p>
-                <p className="movieDate">2012 - Animação/Fantasia - 97min</p>
+                <p className="movieTitle">Guillermo del Toro's Pinocchio</p>
+                <p className="movieDate">2023 - Animação/Fantasia - 114min</p>
               </div>
 
               <p className="movieSinopse">
-                Jack Frost, um garoto que controla o inverno, se junta ao seleto
-                time dos Guardiões Imortais para impedir Breu, o bicho-papão, de
-                transformar todos os sonhos das crianças em pesadelo e usar seus
-                poderes maquiavélicos para governar o mundo.
+                A história clássica do boneco de madeira que deseja virar gente
+                numa versão musical em stop-motion. Ambientada na Itália entre a
+                Primeira e a Segunda Guerras Mundiais, essa abordagem traz o
+                fascismo como pano de fundo.
               </p>
             </div>
 
