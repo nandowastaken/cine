@@ -11,7 +11,9 @@ function HomeAdmin() {
         <h1>Cineclube.<span>admin</span></h1>
       </header>
 
-      <Outlet />
+      <div className="adminSection">
+        <Outlet />
+      </div>
     </div>
   );
 }
