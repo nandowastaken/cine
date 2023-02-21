@@ -212,8 +212,9 @@
     .imgMovieBox {
         height: 50vh;
         width: 100vw;
-        background-image: url("https://occ-0-768-114.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABTdQEk1cq4XPU1JajVf4wRyzuRIamC6Ra_RBVVZfD2-o6B40layNHPvcj1BAx7zHIP69hlgr17WncZxvF-FM3qYJUl8LaVDPzImu.jpg?r=b82");
-        background-position: right top;
+        background-image: url("https://img.olhardigital.com.br/wp-content/uploads/2022/07/2022_04_09_Pinocchio_11321142v3.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .movieCover {
@@ -235,6 +236,7 @@
     }
 
     .movieTitle {
+        text-align: center;
         font-size: 28px;
     }
 
