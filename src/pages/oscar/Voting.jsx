@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
-  const location = useLocation();
-  const categories = useLoaderData();
-  const navigate = useNavigate();
-
-  const [ categoryIndex, setCategoryIndex ] = useState(0);
-  const actualCategory = categories[categoryIndex];
-
+  const data = useLoaderData();
+  const categories = data.all;
+  
+  const [ actualCategory, setActualCategory ] = useState(data.actual);
+  const [ categoryIndex, setCategoryIndex ] = useState(categories.findIndex(el => {
+    return el === actualCategory
+  }));
+  
   return (
     <div className="votingOscar">
       <header className="votingHeader">
@@ -46,9 +47,12 @@ function Voting() {
           </div>
 
           <button onClick={() => {
-            const nextCategory = categoryIndex + 1;
-            if (categories[nextCategory])
-              setCategoryIndex(nextCategory);
+            const nextCategoryIndex = categoryIndex + 1;
+            if (categories[nextCategoryIndex]) {
+              const nextCategory = categories[nextCategoryIndex];
+              const categoryName = nextCategory.category.replace(' ', '-');
+              navigate(`/oscar/voting/${categoryName}`);
+            }
           }}>
             <span>Próximo</span>
             <span>{ 

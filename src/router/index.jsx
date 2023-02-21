@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import App from "../App";
 import HomeOscar from '../pages/oscar/HomeOscar';
@@ -46,11 +46,18 @@ export default createBrowserRouter([
     element: <HomeOscar />
   },
   {
-    path: "/oscar/voting",
+    path: '/oscar/voting',
+    element: <Navigate to="/oscar/voting/melhor-filme" />
+  },
+  {
+    path: "/oscar/voting/:category",
     element: <Voting />,
-    loader: async () => {
+    loader: async ({ params }) => {
       const { data } = await axios.get('https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/categoriasOscar');
-      return data;
+      return {
+        all: data,
+        actual: data.find(el => el.category === params.category.replace('-', ' '))
+      };
     }
   }
 ]);
