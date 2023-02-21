@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useNavigate, useLocation } from "react-router-dom";
 
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
+  const location = useLocation();
   const categories = useLoaderData();
+  const navigate = useNavigate();
 
   const [ categoryIndex, setCategoryIndex ] = useState(0);
   const actualCategory = categories[categoryIndex];
