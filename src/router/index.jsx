@@ -47,6 +47,10 @@ export default createBrowserRouter([
   },
   {
     path: "/oscar/voting",
-    element: <Voting />
+    element: <Voting />,
+    loader: async () => {
+      const { data } = await axios.get('https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/categoriasOscar');
+      return data;
+    }
   }
 ]);

@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
+  const categories = useLoaderData();
+
+  const [ categoryIndex, setCategoryIndex ] = useState(0);
+  const actualCategory = categories[categoryIndex];
+
   return (
     <div className="votingOscar">
       <header className="votingHeader">
         <h1>Cineclube.</h1>
 
         <section className="categoryTitleConteiner">
-          <h2>Melhor filme</h2>
-          <p>Vote para melhor filme de 2022</p>
+          <h2>{ actualCategory.category }</h2>
+          <p>Vote para { actualCategory.category } de 2022</p>
         </section>
 
         <img className="votingHeaderBackground" src="https://raw.githubusercontent.com/deisantix/cine/main/public/eeaao-background.png" />
@@ -18,19 +24,36 @@ function Voting() {
 
       <main className="votingMain">
         <div className="votingOptions">
-          <button>
+          <button onClick={() => {
+            const previousCategory = categoryIndex - 1;
+            if (categories[previousCategory])
+              setCategoryIndex(previousCategory);
+          }}>
             <span>Anterior</span>
-            <span>Melhor filme</span>
+            <span>{ 
+              (actualCategory.previousCategory) 
+                ? actualCategory.previousCategory.toUpperCase()
+                : ''
+            }</span>
+                
           </button>
 
           <div className="categoryNumber">
-            <span>1 de 11</span>
+            <span>{ categoryIndex + 1 } de { categories.length }</span>
             <span>categorias</span>
           </div>
 
-          <button>
+          <button onClick={() => {
+            const nextCategory = categoryIndex + 1;
+            if (categories[nextCategory])
+              setCategoryIndex(nextCategory);
+          }}>
             <span>Próximo</span>
-            <span>Ator coadjuvante</span>
+            <span>{ 
+              (actualCategory.nextCategory)
+                ? actualCategory.nextCategory.toUpperCase() 
+                : ''
+            }</span>
           </button>
         </div>
       </main>

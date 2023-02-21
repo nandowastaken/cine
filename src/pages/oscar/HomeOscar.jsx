@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "../../styles/oscar/HomeOscar.css";
+import { Link } from "react-router-dom";
 
+import "../../styles/oscar/HomeOscar.css";
 import informacoesOscar from '../../assets/oscar/info-oscar.json';
 
 function HomeOscar() {
@@ -49,7 +50,7 @@ function HomeOscar() {
 
         <section className="conteinerInfo">
           { getText() }
-          <button className="goToVotingButton" onClick={(ev) => ev.preventDefault()}>Ir para a votação</button>
+          <Link className="goToVotingButton" to="/oscar/voting">Ir para a votação</Link>
         </section>
 
         <i className="material-icons-outlined"
