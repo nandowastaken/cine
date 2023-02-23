@@ -23,7 +23,7 @@ export default function Register() {
             <input type="password" id="password" name="password" />
           </div>
 
-          <input type="submit" className="registerButton" value="register" />
+          <input type="submit" className="registerButton" value="Cadastrar" />
           <Link to="/login" className="signIn">
             Já tem uma conta?
           </Link>
