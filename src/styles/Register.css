@@ -1,0 +1,100 @@
+:root {
+    --textInput: #ffc9b9;
+    --buttonSubmit: #ff825c;
+    --signUp: #ca6547;
+}
+
+.Register {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img {
+    width: 50%;
+    height: 100%;
+    background-image: url('../src/assets/gatos-de-botas.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.register {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.welcomeBack {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-family: "Inter", sans-serif;
+    color: #6A6A6A;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+#username, #password {
+    width: 260px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: var(--textInput);
+    border: none;
+}
+
+.registerButton {
+    background-color: var(--buttonSubmit);
+    cursor: pointer;
+    border: none;
+    width: 260px;
+    height: 34px;
+    border-radius: 4px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.signUp {
+    color: var(--signUp);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    
+}
+
+@media only screen and (max-width: 414px) {
+    .Register {
+        flex-direction: column;
+    }
+
+    .img {
+        width: 100%;
+        background-size:cover;
+    }
+
+    .register {
+        width: 100%;
+    }
+}
