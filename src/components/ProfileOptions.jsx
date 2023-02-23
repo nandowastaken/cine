@@ -1,8 +1,9 @@
 import "../styles/ProfileOptions.css";
+import { Link } from "react-router-dom";
 
 export default function ProfileOptions() {
   return (
-    <div className="ProfileOptions">
+    <div className="ProfileOptions" id="profile-options">
       <div className="profileInfo">
         <img src="../src/assets/profile.svg" alt="" className="profileImage" />
         <div className="userInfo">
@@ -12,12 +13,14 @@ export default function ProfileOptions() {
       </div>
 
       <div className="options">
-        <a href="" className="option">
+        <Link to="/login" className="option">
           Login
-        </a>
-        <a href="" className="option">
+        </Link>
+
+        <Link to="/register" className="option">
           Cadastrar-se
-        </a>
+        </Link>
+
         <a href="" className="option">
           Sair
         </a>

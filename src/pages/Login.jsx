@@ -1,9 +1,10 @@
 import "../styles/Login.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   return (
     <div className="Login">
-      <div className="img"></div>
+      <div className="img-login"></div>
 
       <div className="login">
         <h1 className="welcomeBack">Bem-vindo de volta :)</h1>
@@ -23,9 +24,9 @@ export default function Login() {
           </div>
 
           <input type="submit" className="loginButton" value="Login" />
-          <a href="#" className="signUp">
+          <Link to="/register" className="signUp">
             Não tem uma conta?
-          </a>
+          </Link>
         </form>
       </div>
     </div>

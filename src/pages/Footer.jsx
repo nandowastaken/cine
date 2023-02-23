@@ -2,7 +2,7 @@ import "../styles/Footer.css";
 
 export default function Footer() {
   return (
-    <div className="Footer">
+    <div className="Footer" id="Footer">
       <img
         src="src/assets/if-logo.svg"
         alt="Logo do Ifal."

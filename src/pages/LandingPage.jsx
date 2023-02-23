@@ -3,11 +3,20 @@ import "../styles/LandingPage.css";
 import ProfileOptions from "../components/ProfileOptions";
 
 function activateHamburger() {
-  var links = document.getElementById("links");
+  let links = document.getElementById("links");
   if (links.style.display === "flex") {
     links.style.display = "none";
   } else {
     links.style.display = "flex";
+  }
+}
+
+function activateOptions() {
+  let profile = document.getElementById("profile-options");
+  if (profile.style.display === "flex") {
+    profile.style.display = "none";
+  } else {
+    profile.style.display = "flex";
   }
 }
 
@@ -18,26 +27,25 @@ export default function LandingPage() {
         <div className="leftSide">
           <h1 className="logo">Cineclube.</h1>
           <div className="links" id="links">
-            <a href="" className="nav-link">
+            <a href="#" className="nav-link">
               Home
             </a>
-            <a href="" className="nav-link">
+            <a href="#AboutUs" className="nav-link">
               Sobre Nós
             </a>
-            <a href="" className="nav-link">
+            <a href="#MovieSection" className="nav-link">
               Filme
             </a>
-            <a href="" className="nav-link">
+            <a href="#Team" className="nav-link">
               Equipe
             </a>
-            <a href="" className="nav-link">
+            <a href="#Footer" className="nav-link">
               Contato
             </a>
           </div>
         </div>
 
-        <div className="profile">
-          <ProfileOptions />
+        <div className="profile" onClick={activateOptions}>
           <img src="../src/assets/profile.svg" alt="" />
         </div>
 
@@ -47,6 +55,10 @@ export default function LandingPage() {
           <div className="line"></div>
         </div>
       </nav>
+
+      <div className="profile-options-container">
+        <ProfileOptions />
+      </div>
 
       <div className="info">
         <p className="description">

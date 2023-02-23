@@ -2,7 +2,7 @@ import "../styles/AboutUs.css";
 
 export default function AboutUs() {
   return (
-    <div className="AboutUs">
+    <div className="AboutUs" id="AboutUs">
       <div className="whoWeAre">
         <h1 className="aboutUsSectionTitle">Quem somos?</h1>
         <p className="aboutUsSectionDescription">
@@ -32,7 +32,9 @@ export default function AboutUs() {
       <div className="nextMeeting">
         <h1 className="aboutUsSectionTitle">Próxima Reunião</h1>
         <p className="aboutUsSectionDescription">
-          Nossa próxima reunião é dia 03/03/2023. O tema é stop-motion, e o filme escolhido é Pinocchio do Del Toro! Acontecerá no horário de 13:00 até às 14:40 na sala de vídeo da biblioteca.
+          Nossa próxima reunião é dia 03/03/2023. O tema é stop-motion, e o
+          filme escolhido é Pinocchio do Del Toro! Acontecerá no horário de
+          13:00 até às 14:40 na sala de vídeo da biblioteca.
         </p>
 
         <button className="seeMovie">Ver Filme</button>
