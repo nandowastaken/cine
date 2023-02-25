@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
+import { useSelector, useDispatch } from "react-redux";
+import { vote } from "../../features/voting/votingSlice";
+
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
   const data = useLoaderData();
+
+  const votes = useSelector((state) => state.voting.value);
+  console.log(votes);
   
   const [ categoryIndex, setCategoryIndex ] = useState(0);
   const currentData = data[categoryIndex];
