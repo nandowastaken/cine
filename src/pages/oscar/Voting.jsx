@@ -7,10 +7,8 @@ import { vote } from "../../features/voting/votingSlice";
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
+  const dispatch = useDispatch();
   const data = useLoaderData();
-
-  const votes = useSelector((state) => state.voting.value);
-  console.log(votes);
   
   const [ categoryIndex, setCategoryIndex ] = useState(0);
   const currentData = data[categoryIndex];
@@ -34,9 +32,15 @@ function Voting() {
       <main className="votingMain">
         <section className="votingNominated">
           {nominees.map(el => (
-            <span key={el.id}>
+            <div key={el.id} onClick={() => {
+              const voteObject = {
+                nominated: el['id'],
+                category: el['CategoryOscarId'],
+              };
+              dispatch(vote(voteObject));
+            }}>
               {el.nominated}, {el.film}
-            </span>
+            </div>
           ))}
         </section>
 

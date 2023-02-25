@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 export const votingSlice = createSlice({
   name: 'voting',
@@ -7,7 +7,16 @@ export const votingSlice = createSlice({
   },
   reducers: {
     vote: (state, action) => {
-      console.log(action);
+      const voting = action.payload;
+      const votes = state.value;
+
+      const votedInCategoryIndex = 
+        votes.findIndex(el => el.category === voting.category);
+      if (votedInCategoryIndex !== -1) {
+        state.value[votedInCategoryIndex] = voting;
+      } else {
+        state.value.push(voting);
+      }
     }
   }
 });
