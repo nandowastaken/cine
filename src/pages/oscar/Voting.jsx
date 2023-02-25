@@ -4,10 +4,14 @@ import { useLoaderData } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { vote } from "../../features/voting/votingSlice";
 
+import VotingOption from "../../components/VotingOption";
+
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
   const dispatch = useDispatch();
+  const state = useSelector((state) => state.voting.value);
+
   const data = useLoaderData();
   
   const [ categoryIndex, setCategoryIndex ] = useState(0);
@@ -15,6 +19,8 @@ function Voting() {
   
   const currentCategory = currentData.category;
   const nominees = currentData.nominees;
+
+  const chosen = state.find(el => el.category === currentCategory.id);
   
   return (
     <div className="votingOscar">
@@ -32,15 +38,22 @@ function Voting() {
       <main className="votingMain">
         <section className="votingNominated">
           {nominees.map(el => (
-            <div key={el.id} onClick={() => {
-              const voteObject = {
-                nominated: el['id'],
-                category: el['CategoryOscarId'],
-              };
-              dispatch(vote(voteObject));
-            }}>
-              {el.nominated}, {el.film}
-            </div>
+            <VotingOption 
+              key={el.id} 
+              nominee={el}
+              className={
+                (chosen && el.id === chosen.nominated)
+                  ? 'chosen'
+                  : ''
+              }
+              onClick={() => {
+                const voteObject = {
+                  nominated: el['id'],
+                  category: el['CategoryOscarId'],
+                };
+                dispatch(vote(voteObject));
+              }} 
+            />
           ))}
         </section>
 
