@@ -10,8 +10,6 @@ function Categories() {
         <thead>
           <tr>
             <th>Categoria</th>
-            <th>Anterior</th>
-            <th>Próxima</th>
             <th>Indicações</th>
             <th></th>
           </tr>
@@ -23,8 +21,6 @@ function Categories() {
               ? categories.map(el => (
                 <tr key={ el.id }>
                   <td>{ el.category }</td>
-                  <td>{ el.previousCategory }</td>
-                  <td>{ el.nextCategory }</td>
                   <td>
                     <Link to={`/admin/categoriesOscar/${el.id}`} state={el}>Ver</Link>
                   </td>
