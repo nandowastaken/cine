@@ -66,11 +66,12 @@
 
 .profile {
     cursor: pointer;
+    margin-right: 20px;
+
     display: flex;
-    flex-direction: column-reverse;
     justify-content: center;
     align-items: flex-end;
-    margin-right: 20px;
+    gap: 2rem;
 }
 
 .profile img {

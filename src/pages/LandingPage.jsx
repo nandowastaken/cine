@@ -1,6 +1,7 @@
 import "../styles/LandingPage.css";
 
 import ProfileOptions from "../components/ProfileOptions";
+import { Link } from "react-router-dom";
 
 function activateHamburger() {
   let links = document.getElementById("links");
@@ -45,8 +46,10 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="profile" onClick={activateOptions}>
-          <img src="../src/assets/profile.svg" alt="" />
+        <div className="profile">
+          {/* <img src="../src/assets/profile.svg" alt="" /> */}
+          <Link className="nav-link" to="/login">Login</Link>
+          <Link className="nav-link" to="/register">Cadastrar-se</Link>
         </div>
 
         <div className="hamburger" onClick={activateHamburger}>
@@ -56,9 +59,9 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      <div className="profile-options-container">
+      {/* <div className="profile-options-container">
         <ProfileOptions />
-      </div>
+      </div> */}
 
       <div className="info">
         <p className="description">

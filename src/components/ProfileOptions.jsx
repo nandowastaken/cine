@@ -6,6 +6,7 @@ export default function ProfileOptions() {
     <div className="ProfileOptions" id="profile-options">
       <div className="profileInfo">
         <img src="../src/assets/profile.svg" alt="" className="profileImage" />
+
         <div className="userInfo">
           <p className="name">Name</p>
           <p className="username">@Username</p>
