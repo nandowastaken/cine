@@ -31,7 +31,10 @@
 }
 
 .homeOscar .material-icons-outlined:hover {
+  cursor: pointer;
+  color:rgba(217, 184, 0, 0.9);
   font-size: 4.5rem;
+  
 }
 
 .headerHomeOscar {
@@ -42,8 +45,22 @@
   font-size: 3rem;
   font-family: 'Inter', sans-serif;
   font-weight: 800;
-  color: #D9B800;
+
+  transition: .4s ease;
 }
+
+.headerLink {
+  text-decoration: none;
+  color: #D9B800;
+  outline: none;
+  transition: .4s ease;
+}
+
+.headerLink:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
 
 .oscarBackground {
   z-index: -1;
