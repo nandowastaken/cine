@@ -38,7 +38,12 @@ function NomineesPerCategory() {
                   <tr key={el.id}>
                     <td>{ el.nominated }</td>
                     <td>{ el.film }</td>
-                    <td>
+                    <td onClick={() => {
+                      navigate(
+                        `/admin/categoriesOscar/${category.id}/edit/${el.id}`, 
+                        {state: el}
+                      )
+                    }}>
                       <i className="material-icons-outlined">edit</i>
                     </td>
                   </tr>

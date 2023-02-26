@@ -51,10 +51,17 @@
   transition: .8s;
 }
 
-.filmPoster {
-  width: 12rem;
+.filmPosterConteiner {
+  overflow: hidden;
+  box-sizing: border-box;
+
+  width: 202px;
+  height: 236px;
   padding: 5px;
-  border-radius: 8px;
+}
+
+.filmPoster {
+  width: 100%;
 }
 
 .filmTitle {
