@@ -39,3 +39,24 @@
   color: red;
   font-size: .9rem;
 }
+
+.editImage {
+  overflow: hidden;
+  
+  width: 150px;
+  height: 176px;
+  margin-bottom: 1rem;
+
+  background-color: rgba(128, 128, 128, 0.253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editImage i {
+  font-size: 2rem;
+}
+
+.editImage img {
+  width: 100%;
+}

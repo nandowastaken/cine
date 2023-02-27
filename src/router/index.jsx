@@ -12,6 +12,7 @@ import AddCategory from "../pages/admin/AddCategory";
 import Categories from "../pages/admin/Categories";
 import NomineesPerCategory from "../pages/admin/NomineesPerCategory";
 import AddNominee from "../pages/admin/AddNominee";
+import EditNominee from "../pages/admin/EditNominee";
 
 import axios from "axios";
 
@@ -61,6 +62,10 @@ export default createBrowserRouter([
         path: "/admin/categoriesOscar/:category/add",
         element: <AddNominee />,
       },
+      {
+        path: "/admin/categoriesOscar/:category/edit/:nominee",
+        element: <EditNominee />,
+      }
     ],
   },
   {
@@ -70,7 +75,7 @@ export default createBrowserRouter([
   {
     path: "/oscar/voting",
     element: <Voting />,
-    loader: async () => {
+    loader: async () => {  
       const categories = await axios.get(
         "https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/categoriasOscar"
       );
