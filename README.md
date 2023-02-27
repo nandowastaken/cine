@@ -10,7 +10,7 @@
 
 <h2 id='projeto'>Projeto</h2>
 <p>
-O Cineclube é o clube de cinema do IFAL campus Maceió. Um espaço perfeito para fazer novas amizades com pessoas que compartilham do mesmo interesse pelo cinema. Para suprir as necessidades do clube, este site foi desenvolvido e projetado por <a href='www.github.com/nandowastaken'>Fernando Jorge</a>, com menção honrosa a Lywya Eugênia e Maria Isabel por correções no design. 
+O Cineclube é o clube de cinema do IFAL campus Maceió. Um espaço perfeito para fazer novas amizades com pessoas que compartilham do mesmo interesse pelo cinema. Para suprir as necessidades do clube, este site está sendo desenvolvido por <a href='www.github.com/nandowastaken'>Fernando Jorge</a>, <a href='https://github.com/deisantix'>Ytalo Ethaniel</a>, <a href='https://github.com/N0rm4nd0'>Normando Vinícius</a>, <a href='https://github.com/Luscas-nl'>Eduardo Lucas</a>, com menção honrosa a Lywya Eugênia e Maria Isabel por correções no design. 
 </p>
 
 <h2 id='funcionalidades'>Telas e suas funções</h2>
