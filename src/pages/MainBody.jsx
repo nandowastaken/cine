@@ -2,6 +2,7 @@ import LandingPage from "./LandingPage";
 import AboutUs from "./AboutUs";
 import MovieSection from "./MovieSection";
 import OscarSection from "./oscar/OscarSection";
+import Team from "./Team";
 import Footer from "./Footer";
 
 export default function MainBody() {
@@ -11,6 +12,7 @@ export default function MainBody() {
       <AboutUs />
       <MovieSection />
       <OscarSection />
+      <Team/>
       <Footer />
     </div>
   );
