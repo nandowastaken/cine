@@ -1,12 +1,12 @@
 .teamCardBox{
     height: 241px;
     width: 571px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     border-radius: 25px;
     display: flex;
     flex-direction: row;
     outline: 1px solid rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     align-items: center;
     margin: 15px 0;
 }
@@ -31,6 +31,8 @@
 }
 
 .infoTeamBox > .namePerson{
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
     font-size: 1.8em;
 }
 
@@ -39,4 +41,16 @@
     font-weight: 400;
     font-size: .95em;
     margin-bottom: 8px;
+    font-family: "Inter", sans-serif;
+}
+
+.descPerson {
+    font-family: "Inter", sans-serif;
+}
+
+@media only screen and (max-width: 414px) {
+    .teamCardBox {
+        width: 100vw;
+        
+    }
 }
