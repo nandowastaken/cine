@@ -5,7 +5,11 @@ export default function ProfileOptions() {
   return (
     <div className="ProfileOptions" id="profile-options">
       <div className="profileInfo">
-        <img src="../src/assets/profile.svg" alt="" className="profileImage" />
+        <img
+          src="https://raw.githubusercontent.com/nandowastaken/cine/221df86ffd4277960108fbffced66b860bc041c5/svgs/profile.svg"
+          alt=""
+          className="profileImage"
+        />
         <div className="userInfo">
           <p className="name">Name</p>
           <p className="username">@Username</p>
