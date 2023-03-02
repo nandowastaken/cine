@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <div className="Footer" id="Footer">
       <img
-        src="src/assets/if-logo.svg"
+        src="https://raw.githubusercontent.com/nandowastaken/cine/adf4c1c695cc4f8c934c0321637bb2c113fd7f3b/svgs/if-logo.svg"
         alt="Logo do Ifal."
         className="if-logo"
       />
