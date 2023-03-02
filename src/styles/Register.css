@@ -17,7 +17,7 @@
 .img {
     width: 50%;
     height: 100%;
-    background-image: url('../src/assets/gatos-de-botas.jpg');
+    background-image: url('https://github.com/nandowastaken/cine/blob/team_pics/imgs/gatos-de-botas.jpg?raw=true');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

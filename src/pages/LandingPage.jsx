@@ -46,7 +46,10 @@ export default function LandingPage() {
         </div>
 
         <div className="profile" onClick={activateOptions}>
-          <img src="../src/assets/profile.svg" alt="" />
+          <img
+            src="https://raw.githubusercontent.com/nandowastaken/cine/5f02a91da717a3cf3d4985aa48eb53241f6acc38/svgs/profile.svg"
+            alt=""
+          />
         </div>
 
         <div className="hamburger" onClick={activateHamburger}>
