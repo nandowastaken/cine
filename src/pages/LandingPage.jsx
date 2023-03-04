@@ -39,7 +39,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-
         <ProfileOptions user={data} />
 
         <div className="hamburger" onClick={activateHamburger}>
