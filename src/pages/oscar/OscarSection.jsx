@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../styles/OscarSection.css";
 
 export default function OscarSection() {
@@ -12,7 +13,7 @@ export default function OscarSection() {
           R$ 5,00 e o vencedor leva todo o dinheiro acumulado.{" "}
         </p>
 
-        <button className="invite-button">Participar</button>
+        <Link className="invite-button" to="/oscar">Participar</Link>
       </div>
     </div>
   );

@@ -75,6 +75,8 @@ export default createBrowserRouter([
     path: "/oscar/voting",
     element: <Voting />,
     loader: async () => {  
+      const user = await axios.get('/sessaoAtiva');
+
       const categories = await axios.get("/categoriasOscar");
 
       const oscar = [];
@@ -90,7 +92,10 @@ export default createBrowserRouter([
           nominees: nominees.data,
         });
       }
-      return oscar;
+      return {
+        user: user.data,
+        oscar: oscar
+      };
     },
   },
 
