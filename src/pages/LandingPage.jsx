@@ -12,18 +12,8 @@ function activateHamburger() {
   }
 }
 
-function activateOptions() {
-  let profile = document.getElementById("profile-options");
-  if (profile.style.display === "flex") {
-    profile.style.display = "none";
-  } else {
-    profile.style.display = "flex";
-  }
-}
-
 export default function LandingPage() {
   const data = useLoaderData();
-  console.log(data);
 
   return (
     <div className="LandingPage backgroundImgContainer">
@@ -49,11 +39,8 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="profile">
-          {/* <img src="../src/assets/profile.svg" alt="" /> */}
-          <Link className="nav-link" to="/login">Login</Link>
-          <Link className="nav-link" to="/register">Cadastrar-se</Link>
-        </div>
+
+        <ProfileOptions user={data} />
 
         <div className="hamburger" onClick={activateHamburger}>
           <div className="line"></div>
@@ -61,10 +48,6 @@ export default function LandingPage() {
           <div className="line"></div>
         </div>
       </nav>
-
-      {/* <div className="profile-options-container">
-        <ProfileOptions />
-      </div> */}
 
       <div className="info">
         <p className="description">

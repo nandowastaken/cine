@@ -28,7 +28,7 @@ export default function Login() {
                 user,
                 password,
               });
-              console.log(await axios.get('/sessaoAtiva'));
+              navigate('/');
             } catch (error) {
               console.log(error);
             }
