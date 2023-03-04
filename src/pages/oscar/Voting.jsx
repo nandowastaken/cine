@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import axios from '../../app/axios';
 
 import { useSelector, useDispatch } from "react-redux";
 import { vote } from "../../features/voting/votingSlice";
@@ -9,18 +10,25 @@ import VotingOption from "../../components/VotingOption";
 import '../../styles/oscar/Voting.css';
 
 function Voting() {
+  const navigate = useNavigate();
+  const data = useLoaderData();
+  const user = data.user;
+  const oscar = data.oscar;
+
   const dispatch = useDispatch();
   const state = useSelector((state) => state.voting.value);
-
-  const data = useLoaderData();
   
   const [ categoryIndex, setCategoryIndex ] = useState(0);
-  const currentData = data[categoryIndex];
+  const currentData = oscar[categoryIndex];
   
   const currentCategory = currentData.category;
   const nominees = currentData.nominees;
 
   const chosen = state.find(el => el.category === currentCategory.id);
+
+  useEffect(() => {
+    if (!user) navigate('/');
+  }, []);
   
   return (
     <div className="votingOscar">
@@ -60,7 +68,7 @@ function Voting() {
         <div className="votingOptions">
           <button onClick={() => {
             const previousCategory = categoryIndex - 1;
-            if (data[previousCategory])
+            if (oscar[previousCategory])
               setCategoryIndex(previousCategory);
           }}>
             <span>Anterior</span>
@@ -73,14 +81,23 @@ function Voting() {
           </button>
 
           <div className="categoryNumber">
-            <span>{ categoryIndex + 1 } de { data.length }</span>
+            <span>{ categoryIndex + 1 } de { oscar.length }</span>
             <span>categorias</span>
           </div>
 
-          <button onClick={() => {
+          <button onClick={async () => {
             const nextCategoryIndex = categoryIndex + 1;
-            if (data[nextCategoryIndex]) {
+            if (oscar[nextCategoryIndex]) {
               setCategoryIndex(nextCategoryIndex);
+            } else {
+              for (let voted of state) {
+                await axios.post('/apostarOscar', {
+                  user: user,
+                  nominee: voted.nominated,
+                  category: voted.category
+                });
+              }
+              navigate('/');
             }
           }}>
             <span>Próximo</span>

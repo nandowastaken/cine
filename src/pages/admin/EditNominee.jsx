@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "../../app/axios";
 
 function EditNominee() {
   const oscar = useLocation().state;
@@ -23,14 +23,12 @@ function EditNominee() {
         setErrorMessage('');
 
         try {
-          await axios.put(
-            'https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/atualizarIndicadoOscar', {
-              id: oscar.id,
-              nominated,
-              film,
-              image: imageLink
-            }
-          );
+          await axios.put('/atualizarIndicadoOscar', {
+            id: oscar.id,
+            nominated,
+            film,
+            image: imageLink
+          });
           navigate(`/admin/categoriesOscar/${oscar.CategoryOscarId}`, { state: oscar.CategoryOscar });
         } catch (error) {
           if (error.code && error.code === 'ERR_BAD_REQUEST')

@@ -115,7 +115,7 @@
   border: none;
   border-radius: 36px;
 
-  background-color: #A61333;
+  background-color: #ff1d25;
   color: white;
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
@@ -131,5 +131,5 @@
 
 .goToVotingButton:hover {
   background-color: #ffffff;
-  color: #A61333;
+  color: #ff1d25;
 }

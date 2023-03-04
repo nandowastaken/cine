@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from '../../app/axios';
 
 function AddNominee() {
   const location = useLocation();
@@ -27,14 +27,11 @@ function AddNominee() {
         setErrorMessage('');
 
         try {
-          await axios.post(
-            'https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/adicionarIndicadoOscar',
-            {
-              nominated,
-              film,
-              category: state.id
-            }
-          );
+          await axios.post('/adicionarIndicadoOscar', {
+            nominated,
+            film,
+            category: state.id
+          });
           navigate(`/admin/categoriesOscar/${state.id}`, { state: state });
         } catch (error) {
           if (error.code && error.code === 'ERR_BAD_REQUEST')

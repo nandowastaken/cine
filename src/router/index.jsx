@@ -14,12 +14,16 @@ import NomineesPerCategory from "../pages/admin/NomineesPerCategory";
 import AddNominee from "../pages/admin/AddNominee";
 import EditNominee from "../pages/admin/EditNominee";
 
-import axios from "axios";
+import axios from "../app/axios";
 
 export default createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: async () => {
+      const { data } = await axios.get('/sessaoAtiva');
+      return data;
+    }
   },
   {
     path: "/admin",
@@ -33,9 +37,7 @@ export default createBrowserRouter([
         path: "/admin/categoriesOscar",
         element: <Categories />,
         loader: async () => {
-          const { data } = await axios.get(
-            "https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/categoriasOscar"
-          );
+          const { data } = await axios.get("/categoriasOscar");
           return data;
         },
       },
@@ -49,12 +51,9 @@ export default createBrowserRouter([
         loader: async ({ params }) => {
           const category = params.category;
 
-          const { data } = await axios.get(
-            "https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/indicadosOscar",
-            {
-              params: { category },
-            }
-          );
+          const { data } = await axios.get("/indicadosOscar", {
+            params: { category },
+          });
           return data;
         },
       },
@@ -76,26 +75,27 @@ export default createBrowserRouter([
     path: "/oscar/voting",
     element: <Voting />,
     loader: async () => {  
-      const categories = await axios.get(
-        "https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/categoriasOscar"
-      );
+      const user = await axios.get('/sessaoAtiva');
+
+      const categories = await axios.get("/categoriasOscar");
 
       const oscar = [];
       for (let category of categories.data) {
-        const nominees = await axios.get(
-          "https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/indicadosOscar",
-          {
-            params: {
-              category: category.id,
-            },
-          }
-        );
+        const nominees = await axios.get("/indicadosOscar", {
+          params: {
+            category: category.id,
+          },
+        });
+        
         oscar.push({
           category: category,
           nominees: nominees.data,
         });
       }
-      return oscar;
+      return {
+        user: user.data,
+        oscar: oscar
+      };
     },
   },
 

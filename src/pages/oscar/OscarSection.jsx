@@ -1,5 +1,5 @@
-import "../../styles/OscarSection.css";
 import { Link } from "react-router-dom";
+import "../../styles/OscarSection.css";
 
 export default function OscarSection() {
   return (
@@ -12,9 +12,8 @@ export default function OscarSection() {
           adivinhar mais vencedores, ganha! Os participantes pagam uma taxa de
           R$ 5,00 e o vencedor leva todo o dinheiro acumulado.{" "}
         </p>
-        <Link to="/oscar">
-          <button className="invite-button">Participar</button>
-        </Link>
+
+        <Link className="invite-button" to="/oscar">Participar</Link>
       </div>
     </div>
   );

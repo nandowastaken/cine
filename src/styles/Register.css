@@ -50,16 +50,18 @@
     gap: 4px;
 }
 
-.label {
+.formContainer .label {
     font-family: "Inter", sans-serif;
     color: #6A6A6A;
     font-size: 0.9rem;
     font-weight: 400;
 }
 
-#username, #password {
+.formContainer input {
+    box-sizing: border-box;
     width: 260px;
     height: 34px;
+    padding: 10px;
     border-radius: 4px;
     background-color: var(--textInput);
     border: none;

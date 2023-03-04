@@ -1,6 +1,6 @@
 .OscarSection {
     width: 100vw;
-    height: 100vh;
+    height: 800px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -9,25 +9,27 @@
 }
 
 .oscar-image {
-    width: 50vw;
+    width: 50%;
     height: 100%;
     background-image: url("https://media.glamourmagazine.co.uk/photos/61389c26236c41e831489a5d/16:9/w_2560%2Cc_limit/gettyimages-645751698_sf.jpg");
-    background-position: bottom left;
+    background-position: center left;
 }
 
 .invite-section {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 2rem;
+
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 50%;
-    padding: 160px;
     gap: 20px;
 }
 
 .invite-title {
     font-family: "Inter", sans-serif;
-    text-align: justify;
-    font-size: 140px;
+    text-align: left;
+    font-size: 4rem;
     font-weight: 800;
 }
 
@@ -35,28 +37,33 @@
     font-family: "Inter", sans-serif;
     text-align: justify;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 1.2rem;
     width: 100%;
 }
 
 .invite-button {
+    cursor: pointer;
+
+    width: 350px;
+    height: 45px;
+    margin: 10px 0 10px;
+    border: none;
+    border-radius: 36px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+
     background-color: #FF1D25;
     color: #FFFFFF;
-
-    border: none;
-    cursor: pointer;
-    border-radius: 36px;
-    width: 600px;
-    height: 65px;
-    margin: 10px 0 10px;
-
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 500;
     font-family: "Inter", sans-serif;
     text-transform: uppercase;
+    text-decoration: none;
 
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
     transition: .6s ease;
 }
 

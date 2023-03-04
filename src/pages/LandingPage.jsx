@@ -1,6 +1,7 @@
 import "../styles/LandingPage.css";
 
 import ProfileOptions from "../components/ProfileOptions";
+import { Link, useLoaderData } from "react-router-dom";
 
 function activateHamburger() {
   let links = document.getElementById("links");
@@ -11,16 +12,9 @@ function activateHamburger() {
   }
 }
 
-function activateOptions() {
-  let profile = document.getElementById("profile-options");
-  if (profile.style.display === "flex") {
-    profile.style.display = "none";
-  } else {
-    profile.style.display = "flex";
-  }
-}
-
 export default function LandingPage() {
+  const data = useLoaderData();
+
   return (
     <div className="LandingPage backgroundImgContainer">
       <nav className="navbar">
@@ -45,12 +39,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="profile" onClick={activateOptions}>
-          <img
-            src="https://raw.githubusercontent.com/nandowastaken/cine/5f02a91da717a3cf3d4985aa48eb53241f6acc38/svgs/profile.svg"
-            alt=""
-          />
-        </div>
+        <ProfileOptions user={data} />
 
         <div className="hamburger" onClick={activateHamburger}>
           <div className="line"></div>
@@ -58,10 +47,6 @@ export default function LandingPage() {
           <div className="line"></div>
         </div>
       </nav>
-
-      <div className="profile-options-container">
-        <ProfileOptions />
-      </div>
 
       <div className="info">
         <p className="description">
