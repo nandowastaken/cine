@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from '../../app/axios';
 
 import '../../styles/admin/AddRecordAdminSection.css';
 
@@ -21,9 +21,7 @@ function AddCategory() {
         setErrorMessage('');
 
         try {
-          await axios.post(
-            'https://deisantix-super-space-parakeet-xqrgrqj7vvv2pjq-3000.preview.app.github.dev/adicionarCategoriaOscar',
-            {
+          await axios.post('/adicionarCategoriaOscar', {
               category,
               previousCategory,
               nextCategory

@@ -1,7 +1,7 @@
 import "../styles/LandingPage.css";
 
 import ProfileOptions from "../components/ProfileOptions";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 function activateHamburger() {
   let links = document.getElementById("links");
@@ -22,6 +22,9 @@ function activateOptions() {
 }
 
 export default function LandingPage() {
+  const data = useLoaderData();
+  console.log(data);
+
   return (
     <div className="LandingPage backgroundImgContainer">
       <nav className="navbar">
