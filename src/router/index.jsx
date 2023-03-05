@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import App from "../App";
+import MainBody from '../pages/MainBody';
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import HomeOscar from "../pages/oscar/HomeOscar";
@@ -14,16 +14,14 @@ import NomineesPerCategory from "../pages/admin/NomineesPerCategory";
 import AddNominee from "../pages/admin/AddNominee";
 import EditNominee from "../pages/admin/EditNominee";
 
+import VotesPerNominee from "../pages/admin/VotesPerNominee";
+
 import axios from "../app/axios";
 
 export default createBrowserRouter([
   {
     path: "/",
-    element: <App />,
-    loader: async () => {
-      const { data } = await axios.get('/sessaoAtiva');
-      return data;
-    }
+    element: <MainBody />,
   },
   {
     path: "/admin",
@@ -51,10 +49,20 @@ export default createBrowserRouter([
         loader: async ({ params }) => {
           const category = params.category;
 
-          const { data } = await axios.get("/indicadosOscar", {
+          const nominees = await axios.get("/indicadosOscar", {
             params: { category },
           });
-          return data;
+
+          for (let nominee of nominees.data) {
+            const votes = await axios.get("/votosOscar", {
+              params: {
+                nominee: nominee.id
+              }
+            });
+            nominee.votes = votes.data;
+          }
+          
+          return nominees.data;
         },
       },
       {
@@ -64,6 +72,10 @@ export default createBrowserRouter([
       {
         path: "/admin/categoriesOscar/:category/edit/:nominee",
         element: <EditNominee />,
+      },
+      {
+        path: "/admin/categoriesOscar/:category/:nominee/votes",
+        element: <VotesPerNominee />
       }
     ],
   },
@@ -74,29 +86,6 @@ export default createBrowserRouter([
   {
     path: "/oscar/voting",
     element: <Voting />,
-    loader: async () => {  
-      const user = await axios.get('/sessaoAtiva');
-
-      const categories = await axios.get("/categoriasOscar");
-
-      const oscar = [];
-      for (let category of categories.data) {
-        const nominees = await axios.get("/indicadosOscar", {
-          params: {
-            category: category.id,
-          },
-        });
-        
-        oscar.push({
-          category: category,
-          nominees: nominees.data,
-        });
-      }
-      return {
-        user: user.data,
-        oscar: oscar
-      };
-    },
   },
 
   {

@@ -1,5 +1,5 @@
 import TeamCard from "../components/TeamCard";
-import Carousel from "react-elastic-carousel";
+// import Carousel from "react-elastic-carousel";
 import { members } from "../jsons/team.json";
 
 import "../styles/Team.css";

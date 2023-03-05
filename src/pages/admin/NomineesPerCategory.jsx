@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { 
+  Link, 
+  useLoaderData, 
+  useLocation, 
+  useNavigate 
+} from "react-router-dom";
 
 function NomineesPerCategory() {
   const location = useLocation();
@@ -30,6 +35,7 @@ function NomineesPerCategory() {
                   <th>Indicação</th>
                   <th>Filme</th>
                   <th></th>
+                  <th>Votos</th>
                 </tr>
               </thead>
 
@@ -45,6 +51,13 @@ function NomineesPerCategory() {
                       )
                     }}>
                       <i className="material-icons-outlined">edit</i>
+                    </td>
+                    <td>
+                      <Link 
+                        to={`/admin/categoriesOscar/${category.id}/${el.id}/votes`}
+                        state={el}>
+                        { el.votes.length }
+                      </Link>
                     </td>
                   </tr>
                 ))}

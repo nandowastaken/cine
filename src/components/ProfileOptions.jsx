@@ -1,11 +1,15 @@
 import "../styles/ProfileOptions.css";
 import { Link } from "react-router-dom";
 
-export default function ProfileOptions(props) {
+import { useSelector } from "react-redux";
+
+export default function ProfileOptions() {
+  const user = useSelector(state => state.user.value);
+
   return (
     <div className="profile">
       {
-        (Object.keys(props.user).length)
+        (user)
           ? (
             <img src="../src/assets/profile.svg" alt="" />
           ) : (

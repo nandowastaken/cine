@@ -1,7 +1,6 @@
 import "../styles/LandingPage.css";
 
 import ProfileOptions from "../components/ProfileOptions";
-import { Link, useLoaderData } from "react-router-dom";
 
 function activateHamburger() {
   let links = document.getElementById("links");
@@ -13,8 +12,6 @@ function activateHamburger() {
 }
 
 export default function LandingPage() {
-  const data = useLoaderData();
-
   return (
     <div className="LandingPage backgroundImgContainer">
       <nav className="navbar">
@@ -39,7 +36,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <ProfileOptions user={data} />
+        <ProfileOptions />
 
         <div className="hamburger" onClick={activateHamburger}>
           <div className="line"></div>
