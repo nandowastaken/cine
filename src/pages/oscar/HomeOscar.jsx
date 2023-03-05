@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../../styles/oscar/HomeOscar.css";
-import informacoesOscar from "../../assets/oscar/info-oscar.json";
+import informacoesOscar from "../../jsons/info-oscar.json";
 
 function HomeOscar() {
   const infoOscar = informacoesOscar.infoOscar;
