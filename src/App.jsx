@@ -1,12 +1,18 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainBody from "./pages/MainBody";
-import LandingPage from "./pages/LandingPage";
+
+import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
+import LoadingScreen from './components/LoadingScreen';
+
+import store from './app/store';
+import router from './router';
 
 function App() {
   return (
     <div className="App">
-      <MainBody />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </div>
   );
 }

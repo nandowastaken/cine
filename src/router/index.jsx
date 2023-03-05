@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
-import App from "../App";
+import MainBody from '../pages/MainBody';
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import HomeOscar from "../pages/oscar/HomeOscar";
@@ -19,7 +19,7 @@ import axios from "../app/axios";
 export default createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <MainBody />,
     loader: async () => {
       const { data } = await axios.get('/sessaoAtiva');
       return data;
