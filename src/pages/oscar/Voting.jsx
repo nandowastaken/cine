@@ -5,6 +5,7 @@ import axios from '../../app/axios';
 import { useSelector, useDispatch } from "react-redux";
 import { vote } from "../../features/voting/votingSlice";
 import { setUser } from '../../features/user/userSlice';
+import { showScreen, hideScreen } from '../../features/loading/loadingSlice';
 
 import VotingOption from "../../components/VotingOption";
 import LoadingScreen from '../../components/LoadingScreen';
@@ -83,13 +84,14 @@ function Voting() {
                 key={el.id} 
                 nominee={el}
                 className={
-                  (chosen && el.id === chosen.nominated)
+                  (chosen && el.id === chosen.nominee)
                     ? 'chosen'
                     : ''
                 }
                 onClick={() => {
                   const voteObject = {
-                    nominated: el['id'],
+                    user: user,
+                    nominee: el['id'],
                     category: el['CategoryOscarId'],
                   };
                   dispatch(vote(voteObject));
@@ -126,14 +128,19 @@ function Voting() {
                 setCurrentData(oscar[nextCategoryIndex]);
 
               } else {
-                for (let voted of voting) {
+                dispatch(showScreen());
+
+                try {
                   await axios.post('/apostarOscar', {
-                    user: user,
-                    nominee: voted.nominated,
-                    category: voted.category
+                    votes: voting
                   });
+                  navigate('/');
+                  dispatch()
+                } catch (error) {
+                  console.log(error);
+                } finally {
+                  dispatch(hideScreen());
                 }
-                navigate('/');
               }
             }}>
               <span>Próximo</span>
