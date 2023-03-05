@@ -2,7 +2,9 @@ import "../styles/ProfileOptions.css";
 import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from "react-redux";
-import { toggleProfileOptions } from '../features/user/userSlice';
+import { setUser, toggleProfileOptions } from '../features/user/userSlice';
+
+import axios from '../app/axios';
 
 export default function ProfileOptions() {
   const dispatch = useDispatch();
@@ -32,7 +34,10 @@ export default function ProfileOptions() {
               <span className="username">@{user}</span>
 
               <div className="options">
-                <span className="option">Sair</span>
+                <span className="option" onClick={async () => {
+                  await axios.get('/logout');
+                  dispatch(setUser(''));
+                }}>Sair</span>
               </div>
             </div>
           )

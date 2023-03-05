@@ -21,17 +21,22 @@ export default function MainBody() {
     const getUser = async () => {
       dispatch(showScreen());
 
-      let { data } = await axios.get('/sessaoAtiva');
-      if (typeof data === 'object') data = '';
-
-      dispatch(setUser(data));
-      dispatch(hideScreen());
+      try {
+        let { data } = await axios.get('/sessaoAtiva');
+        if (typeof data === 'object') data = '';
+  
+        dispatch(setUser(data));
+      } catch (error) {
+        console.log(error);
+      } finally {
+        dispatch(hideScreen());
+      }
     };
 
     if (!user) {
       getUser();
     }
-  }, []);
+  }, [user]);
 
   return (
     <div className="MainBody" onClick={() => {
