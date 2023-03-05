@@ -12,7 +12,7 @@ export default function MainBody() {
       <AboutUs />
       <MovieSection />
       <OscarSection />
-      <Team/>
+      {/* <Team/> */}
       <Footer />
     </div>
   );
