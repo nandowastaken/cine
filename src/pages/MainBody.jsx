@@ -3,7 +3,7 @@ import axios from '../app/axios';
 
 import { useSelector, useDispatch } from "react-redux";
 import { showScreen, hideScreen } from '../features/loading/loadingSlice';
-import { setUser } from '../features/user/userSlice';
+import { setUser, closeProfileOptions } from '../features/user/userSlice';
 
 import LandingPage from "./LandingPage";
 import AboutUs from "./AboutUs";
@@ -14,24 +14,34 @@ import Footer from "./Footer";
 
 export default function MainBody() {
   const dispatch = useDispatch();
+
   const user = useSelector(state => state.user.value);
 
   useEffect(() => {
     const getUser = async () => {
       dispatch(showScreen());
 
-      const { data } = await axios.get('/sessaoAtiva');
-      dispatch(setUser(data));
-      dispatch(hideScreen());
+      try {
+        let { data } = await axios.get('/sessaoAtiva');
+        if (typeof data === 'object') data = '';
+  
+        dispatch(setUser(data));
+      } catch (error) {
+        console.log(error);
+      } finally {
+        dispatch(hideScreen());
+      }
     };
 
     if (!user) {
       getUser();
     }
-  }, []);
+  }, [user]);
 
   return (
-    <div className="MainBody">
+    <div className="MainBody" onClick={() => {
+      dispatch(closeProfileOptions());
+    }}>
       <LandingPage />
       <AboutUs />
       <MovieSection />

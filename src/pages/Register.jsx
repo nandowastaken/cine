@@ -7,9 +7,7 @@ import axios from "../app/axios";
 export default function Register() {
   const navigate = useNavigate();
 
-  const [ name, setName ] = useState();
   const [ user, setUser ] = useState();
-  const [ email, setEmail ] = useState();
   const [ password, setPassword ] = useState();
 
   return (
@@ -26,9 +24,7 @@ export default function Register() {
             
             try {
               await axios.post('/cadastrar', {
-                name,
                 user,
-                email,
                 password
               });
               navigate('/');
@@ -37,18 +33,6 @@ export default function Register() {
             }
           }}>
           <div className="formContainer">
-            <label htmlFor="name" className="label">Nome</label>
-            <input 
-              type="text" 
-              id="name" 
-              name="name" 
-              onChange={(ev) => {
-                setName(ev.target.value);
-              }}
-            />
-          </div>
-
-          <div className="formContainer">
             <label htmlFor="username" className="label">Usuário</label>
             <input 
               type="text" 
@@ -56,18 +40,6 @@ export default function Register() {
               name="username" 
               onChange={(ev) => {
                 setUser(ev.target.value);
-              }}
-            />
-          </div>
-
-          <div className="formContainer">
-            <label htmlFor="email" className="label">Email</label>
-            <input 
-              type="text" 
-              id="email" 
-              name="email" 
-              onChange={(ev) => {
-                setEmail(ev.target.value);
               }}
             />
           </div>
