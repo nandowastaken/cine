@@ -22,7 +22,7 @@ function Categories() {
                 <tr key={ el.id }>
                   <td>{ el.category }</td>
                   <td>
-                    <Link to={`/admin/categoriesOscar/${el.id}`} state={el}>Ver</Link>
+                    <Link to={`/admin/categoriesOscar/${el.id}`} state={el} className="seeCategory">Ver</Link>
                   </td>
                   <td className="editRecord">
                     <i className="material-icons-outlined">edit</i>

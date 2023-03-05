@@ -14,6 +14,8 @@ import NomineesPerCategory from "../pages/admin/NomineesPerCategory";
 import AddNominee from "../pages/admin/AddNominee";
 import EditNominee from "../pages/admin/EditNominee";
 
+import VotesPerNominee from "../pages/admin/VotesPerNominee";
+
 import axios from "../app/axios";
 
 export default createBrowserRouter([
@@ -47,10 +49,20 @@ export default createBrowserRouter([
         loader: async ({ params }) => {
           const category = params.category;
 
-          const { data } = await axios.get("/indicadosOscar", {
+          const nominees = await axios.get("/indicadosOscar", {
             params: { category },
           });
-          return data;
+
+          for (let nominee of nominees.data) {
+            const votes = await axios.get("/votosOscar", {
+              params: {
+                nominee: nominee.id
+              }
+            });
+            nominee.votes = votes.data;
+          }
+          
+          return nominees.data;
         },
       },
       {
@@ -60,6 +72,10 @@ export default createBrowserRouter([
       {
         path: "/admin/categoriesOscar/:category/edit/:nominee",
         element: <EditNominee />,
+      },
+      {
+        path: "/admin/categoriesOscar/:category/:nominee/votes",
+        element: <VotesPerNominee />
       }
     ],
   },
