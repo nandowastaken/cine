@@ -1,12 +1,14 @@
+import '../styles/LoadingScreen.css';
+
 export default function LoadingScreen() {
   return (
-    <div>
-      <section class="load-screen">
-        <div class="load-screen__line"></div>
-        <span class="load-screen__asterisk">*</span>
+    <div className="load-screen-container">
+      <section className="load-screen">
+        <div className="load-screen__line"></div>
+        <span className="load-screen__asterisk">*</span>
       </section>
 
-      <p class="loading-message"><span class="cine">Cine.</span> está carregando.</p>
+      <p className="loading-message"><span className="cine">Cine.</span> está carregando.</p>
     </div>
   );
 }

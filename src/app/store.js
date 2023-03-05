@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import votingReducer from '../features/voting/votingSlice';
 import loadingReducer from '../features/loading/loadingSlice';
+import userReducer from '../features/user/userSlice';
+import votingReducer from '../features/voting/votingSlice';
 
 export default configureStore({
   reducer: {
-    voting: votingReducer,
     loading: loadingReducer,
+    user: userReducer,
+    voting: votingReducer,
   },
 });

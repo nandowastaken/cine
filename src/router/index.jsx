@@ -20,10 +20,6 @@ export default createBrowserRouter([
   {
     path: "/",
     element: <MainBody />,
-    loader: async () => {
-      const { data } = await axios.get('/sessaoAtiva');
-      return data;
-    }
   },
   {
     path: "/admin",
@@ -74,29 +70,6 @@ export default createBrowserRouter([
   {
     path: "/oscar/voting",
     element: <Voting />,
-    loader: async () => {  
-      const user = await axios.get('/sessaoAtiva');
-
-      const categories = await axios.get("/categoriasOscar");
-
-      const oscar = [];
-      for (let category of categories.data) {
-        const nominees = await axios.get("/indicadosOscar", {
-          params: {
-            category: category.id,
-          },
-        });
-        
-        oscar.push({
-          category: category,
-          nominees: nominees.data,
-        });
-      }
-      return {
-        user: user.data,
-        oscar: oscar
-      };
-    },
   },
 
   {
