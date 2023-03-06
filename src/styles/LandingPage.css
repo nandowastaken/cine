@@ -140,6 +140,10 @@
     justify-content: flex-end;
 }
 
+.login-system {
+    display: none;
+}
+
 @media only screen and (min-width: 2000px) {
     .logo {
         font-size: 80px;
@@ -194,10 +198,10 @@
         justify-content: center;
         align-items: flex-start;
         background-color: white;
-        margin-top: 70%;
-        width: 100vw;
-        height: 25vh;
-        right: 0;
+        top: -20px;
+        right: -1px;
+        width: 101vw;
+        height: 45vh;
     }
 
     .nav-link {
@@ -225,6 +229,10 @@
 
     .join {
         width: 100%;
+    }
+
+    .login-system {
+        display: inline;
     }
     
 }

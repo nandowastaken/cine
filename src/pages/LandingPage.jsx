@@ -2,6 +2,8 @@ import "../styles/LandingPage.css";
 
 import ProfileOptions from "../components/ProfileOptions";
 
+import { Link, useNavigate } from "react-router-dom";
+
 function activateHamburger() {
   let links = document.getElementById("links");
   if (links.style.display === "flex") {
@@ -33,6 +35,9 @@ export default function LandingPage() {
             <a href="#Footer" className="nav-link">
               Contato
             </a>
+            <Link to="/login" className="nav-link login-system">Login</Link>
+            <Link to="/register" className="nav-link login-system">Cadastrar-se</Link>
+            
           </div>
         </div>
 
