@@ -249,4 +249,14 @@
     .join {
         font-size: 20px;
     }
+
+    .links {
+        height: 75vh;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .links {
+        height: 55vh;
+    }
 }

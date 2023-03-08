@@ -132,3 +132,10 @@
 .categoryNumber span:last-child {
   font-size: 1rem;
 }
+
+@media only screen and (max-width: 414px) {
+  .votingOptions {
+    display: flex;
+    flex-direction: column;
+  }
+}
