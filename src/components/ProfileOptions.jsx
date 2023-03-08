@@ -17,7 +17,7 @@ export default function ProfileOptions() {
       {
         (user)
           ? (
-            <img src="../src/assets/profile.svg" alt="" onClick={() => {
+            <img src="https://raw.githubusercontent.com/nandowastaken/cine/eb4909000d3bb030e59875c0e714b7611a1a1529/src/assets/profile.svg" alt="" onClick={() => {
               dispatch(toggleProfileOptions());
             }} />
           ) : (
