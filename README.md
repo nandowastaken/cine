@@ -10,7 +10,8 @@
 
 <h2 id='projeto'>Projeto</h2>
 <p>
-O Cineclube é o clube de cinema do IFAL campus Maceió. Um espaço perfeito para fazer novas amizades com pessoas que compartilham do mesmo interesse pelo cinema. Para suprir as necessidades do clube, este site está sendo desenvolvido por <a href='www.github.com/nandowastaken'>Fernando Jorge</a>, <a href='https://github.com/deisantix'>Ytalo Ethaniel</a>, <a href='https://github.com/N0rm4nd0'>Normando Vinícius</a>, <a href='https://github.com/Luscas-nl'>Eduardo Lucas</a>, com menção honrosa a Lywya Eugênia e Maria Isabel por correções no design. 
+O Cineclube é um clube de cinema dentro do IFAL campus Maceió, nele, alunos podem encontrar-se mensalmente para dialogar a respeito do cinema, seus filmes favoritos, suas técnicas prediletas, os diretores que eles mais amam e o porquê de tudo isso. Para atender às necessidades deste clube de cinema, além de um toque de tecnologia, este é o site oficial, tendo sido desenvolvido por <a href='www.github.com/nandowastaken'>Fernando Jorge</a>, <a href='https://github.com/deisantix'>Ytalo Ethaniel</a>
+O Cineclube é o clube de cinema do IFAL campus Maceió. Um espaço perfeito para fazer novas amizades com pessoas que compartilham do mesmo interesse pelo cinema. Para suprir as necessidades do clube, este site está sendo desenvolvido por <a href='www.github.com/nandowastaken'>Fernando Jorge</a>, <a href='https://github.com/deisantix'>Ytalo Ethaniel</a>, <a href='https://github.com/Luscas-nl'>Eduardo Lucas</a>, <a href='https://github.com/N0rm4nd0'>Normando Vinícius</a>, com a participação de dois designers, o Pedro e Lywya Eugênia. 
 </p>
 
 <h2 id='funcionalidades'>Telas e suas funções</h2>
